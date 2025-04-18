@@ -17,4 +17,5 @@ function Reflection()
 window.addEventListener('load', Reflection);
 
 //Jump to Login Page
-setTimeout(function() { window.location.href = 'login.html'; }, 3000); // 15000 毫秒 = 15 秒
+//setTimeout(function() { window.location.href = 'login.html'; }, 3000); 
+window.addEventListener('click', window.location.href = 'login.html');
