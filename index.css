@@ -1,0 +1,127 @@
+body
+{
+    position: relative;
+    margin: 100px;
+    overflow: hidden;
+    background-color: #161515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    font-family: sans-serif;
+}
+
+.container
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle-container
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.circle
+{
+    position:absolute;
+    /*调圆环大小*/
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff00ff, #00ffff);
+    opacity: 0.8;
+    animation: rotate 1.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 
+                0 0 30px rgba(0, 255, 255, 0.8),
+                0 0 5px rgba(255, 255, 255, 0.5) inset;
+    z-index: 2;
+}
+
+.circle::before
+{
+    content: ' ';
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    bottom: 5px;
+    border-radius: 50%;
+    background-color: #161515;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6) inset,
+                0 0 20px rgba(0, 255, 255, 0.6) inset;
+}
+
+/*调字体大小*/
+.text-quantum 
+{
+    position: absolute;
+    top: 155%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6em;
+    font-family: Aldrich;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    z-index: 3;
+}
+
+/*调字体大小*/
+.text-monitoring 
+{
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    font-family: Aldrich;
+
+    color: white;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px black;
+    z-index: 3;
+}
+
+.reflection-circle 
+{
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    /*调圆环阴影距离*/
+    transform: translateY(302px) scaleY(-0.9);
+    filter: blur(12px) url(#waterDistort);
+}
+
+.reflection-circle::before
+{
+    content: ' ';
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    bottom: 5px;
+    border-radius: 50%;
+    background-color: #161515;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6) inset,
+                0 0 20px rgba(0, 255, 255, 0.6) inset;
+}
+
+@keyframes rotate 
+{
+    from 
+    {
+        transform: rotate(0deg);
+    }
+    to 
+    {
+        transform: rotate(360deg);
+    }
+}
