@@ -19,5 +19,5 @@ window.addEventListener('load', Reflection);
 //Jump to Login Page
 //setTimeout(function() { window.location.href = 'login.html'; }, 3000); 
 document.addEventListener('click', function() {
-    window.location.href = 'another_page.html'; // 将 'another_page.html' 替换为您想要跳转的实际文件路径
+    window.location.href = 'login.html'; 
 });
